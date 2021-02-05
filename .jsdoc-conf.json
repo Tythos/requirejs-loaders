@@ -1,0 +1,12 @@
+{
+    "templates": {
+        "systemName": "RequireJS Loaders",
+        "systemSummary": "Loader extensions for various file handlers"
+    },
+    "tags": {
+        "dictionaries": ["jsdoc"]
+    },
+    "plugins": [
+        "plugins/markdown"
+    ]
+}

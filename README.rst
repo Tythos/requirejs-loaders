@@ -19,6 +19,13 @@ remain single-file JavaScript modules). Currently this includes:
   that may (for whatever reason) be module dependencies. This can be useful for
   other plaintext resources, like source code (for GLSL shaders, for example).
 
+* *wasmloader*, which uses a basic no-modules build (for example, when
+  compiling from Rust via wasm-pack) assumption to treat .WASM files as code
+  resources that can be transparently referenced as module dependencies. At
+  this time, this merely returns a module instance as defined by the browser
+  interpreter (meaning the "exports" property must be referenced to look up and
+  invoke any entry points), but this may change with future extensions.
+
 * *ziploader*, which uses a streamlined (SFJM) version of the zipjs library to
   expose .ZIP file contents that a module can then use.
 
@@ -58,3 +65,15 @@ module's "load()" function will be invoked, including a callback that will be
 passed the results of the loading operation. In this case, the CSV loader will
 load and parse a table of data from a .CSV file and return an Array of Objects,
 processed using the Papaparse library, for the module to utilize.
+
+Documentation
+-------------
+
+Each loader has jsdoc-compatible docstrings that can be used to build HTML
+documentation from the command line; the ".gitignore" file includes the "out/"
+directory (not to mention a ".jsdoc-config.json") specifically for this
+purpose::
+
+  > npm install
+
+  > npm run docs

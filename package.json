@@ -1,0 +1,12 @@
+{
+    "name": "requirejs-loaders",
+    "version": "1.0.0",
+    "author": "Brian Kirkpatrick <code@tythos.net>",
+    "dependencies": {
+        "foodoc": "0.0.9",
+        "jsdoc": "^3.6"
+    },
+    "scripts": {
+        "docs": "node ./node_modules/jsdoc/jsdoc.js -R ./README.rst -c ./.jsdoc-conf.json -t ./node_modules/foodoc/template ."
+    }
+}

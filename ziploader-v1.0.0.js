@@ -1,5 +1,6 @@
 /**
- * @author "Brian Kirkpatrick" <code@tythos.net>
+ * @author <code@tythos.net>
+ * @module ziploader
  */
 
 define(function (require, exports, module) {
@@ -20,6 +21,12 @@ define(function (require, exports, module) {
      * decompression, which is performed at module-load time). Uint8Array
      * encoding (in addition to being synchronous, unlike Blobs) can also be
      * easily passed into a TextDecoder instance for plaintext files.
+     * 
+     * As with all loader extensions: to configure, add the following at the
+     * top of your entry point (referencing the location where this SFJM has
+     * been copied into your project)::
+     * 
+     *   > require.config({ "paths": { "zip": "lib/ziploader-v1.0.0" } });
      * 
      * @param {String} name     - Path to .ZIP file to be loaded. This was originally the parameter to require(), minus the "zip!" prefix required to route to this loader.
      * @param {Function} req    - "Parent" require function, used to load other modules.
@@ -51,8 +58,8 @@ define(function (require, exports, module) {
     };
 
     return Object.assign(exports, {
-        "__url__": "",
-        "__semver__": "",
-        "__license__": ""
+        "__url__": "https://raw.githubusercontent.com/Tythos/requirejs-loaders/main/ziploader-v1.0.0.js",
+        "__semver__": "1.0.0",
+        "__license__": "MIT"
     });
 });

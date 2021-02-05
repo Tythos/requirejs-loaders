@@ -1,3 +1,8 @@
+Each individual single-file JavaScript module (SFJM) within this project
+references a specific license in its export fields ("__license__") as an SPDX
+identifier. All other content is copyright under the following instance of the
+MIT License, by default.
+
 MIT License
 
 Copyright (c) 2021 Brian Kirkpatrick
